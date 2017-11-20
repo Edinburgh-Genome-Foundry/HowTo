@@ -70,10 +70,10 @@ git branch gh-pages
 git symbolic-ref HEAD refs/heads/gh-pages  # auto-switches branches to gh-pages
 rm .git/index
 git clean -fdx
+touch .nojekyll
 ```
 
-Finally add a ``.nojekyll`` file in the ``html`` folder.
-This can be done with the command ``touch .nojekyll``.
+The final line adds a ``.nojekyll`` file in the ``html`` folder.
 
 Congratulations, you have a gh-pages branch in your project.
 
@@ -86,8 +86,13 @@ Come back to the ``html`` folder and push it to github:
 ```
 git add .
 git commit -a -m 'new commit'
-git push origin master
+git push origin gh-pages
 ```
 
-You're done. Repeat this *Let's push to Github* procedure everytime you want to
+Yeah ! You're done. Your docs are now hosted there (replace Primavera with your
+Github repo's name):
+
+[https://edinburgh-genome-foundry.github.io/Primavera/](https://edinburgh-genome-foundry.github.io/Primavera/)
+
+Repeat this *Let's push to Github* procedure everytime you want to
 update the docs.
