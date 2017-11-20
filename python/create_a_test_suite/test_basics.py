@@ -15,5 +15,5 @@ def test_arrays():
 # parameter to your test to create a temporary directory to write to:
 def test_with_file_writing(tmpdir):
     with open(os.path.join(str(tmpdir), "mytestfile.txt"), "w+") as f:
-        for i in np.linspace(0, 10, 100):
+        for i in numpy.linspace(0, 10, 100):
             f.write(i)
