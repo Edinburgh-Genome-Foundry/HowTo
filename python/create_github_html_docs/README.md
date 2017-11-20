@@ -1,0 +1,93 @@
+# Create HTML docs hosted on Github for your Python project.
+
+This explains how to use sphinx to autodocument a Python library, and how to
+host it on Github. This is WAY over-complicated, but hey, it may get simpler one day.
+
+## Generating the HTML docs
+
+Your project should have the following structure, where ``docs`` is the folder
+attached in this repo:
+
+```
+project_projectname            <= all-encompassing folder
++-- ProjectName                <= root of the git repo
+    +-- projectname            
+    |   +-- source_file1.py
+    |   +-- source_file2.py
+    +-- docs                   <= copied from THIS repo.
+    |   +-- ...
+    +-- README.md
+    +-- setup.py
+    +-- etc.
+```
+
+
+Personalize the ``docs`` folder:
+
+- Use your editor to automatically change all mentions of "Primavera" in the
+  docs folder to your project's name.
+- Change the content of ``docs/index.rst`` (that's the homepage of the docs)
+- Look around for more options and learn how to use sphinx to change more stuff.
+
+To build the docs, first install the dependencies:
+
+```
+sudo pip install sphinx sphinx_rtd_theme numpydoc sphinxcontrib-mermaid
+```
+
+Then each time you want to re-generate the docs and display them in a Firefox,
+run the ``makehtml.sh`` at the root of the ``docs`` folder, by typing
+``makehtml.sh`` in a terminal.
+
+## Hosting the docs on Github
+
+First make sure that your Python library is on Github and can be cloned using
+```
+git clone git@github.com:myusername/mylibrary
+```
+
+Now notice that the generation of the HTML docs has created files in a new folder called ``html`` located here:
+
+```
+project_projectname            <= all-encompassing folder
++-- built_docs
+    +-- html                   <== this folder !
+        +-- ...
++-- ProjectName                <= root of the git repo
+    +-- ...
+```
+
+Go to the ``html`` folder, remove all the files in it, and pull your github project in this folder:
+
+```
+git clone git@github.com:myusername/mylibrary .
+```
+
+Mind the ``.`` at the end. Now run the following commands, still in the ``html`` folder:
+
+```
+git branch gh-pages
+git symbolic-ref HEAD refs/heads/gh-pages  # auto-switches branches to gh-pages
+rm .git/index
+git clean -fdx
+```
+
+Finally add a ``.nojekyll`` file in the ``html`` folder.
+This can be done with the command ``touch .nojekyll``.
+
+Congratulations, you have a gh-pages branch in your project.
+
+### Let's push to Github:
+
+Now from your ``docs`` folder, run once more ``makehtml`` to regenerate the docs.
+
+Come back to the ``html`` folder and push it to github:
+
+```
+git add .
+git commit -a -m 'new commit'
+git push origin master
+```
+
+You're done. Repeat this *Let's push to Github* procedure everytime you want to
+update the docs.
