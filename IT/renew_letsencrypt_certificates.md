@@ -1,5 +1,17 @@
 # Renew letsencrypt certificates on a machine
 
+### Installing certbot
+
+```
+sudo apt-get update
+sudo apt-get install software-properties-common
+sudo add-apt-repository -y ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install -y python-certbot-nginx 
+```
+
+### Renewing the certificates
+
 First stop nginx. If it is running from Docker, stop it with
 ``docker stop NAME`` where ``NAME`` is the name of the container,
 certainly something like ``****_nginx_1``, you can get all container
