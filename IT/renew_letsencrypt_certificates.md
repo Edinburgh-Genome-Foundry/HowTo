@@ -1,4 +1,6 @@
-# Renew letsencrypt certificates on a machine
+# Create / renew letsencrypt certificates on a machine
+
+
 
 ### Installing certbot
 
@@ -10,7 +12,11 @@ sudo apt-get update
 sudo apt-get install -y python-certbot-nginx 
 ```
 
-### Renewing the certificates
+### Creating a certificate
+
+To create a certificate on a new Ubuntu machine see [this link](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04).
+
+### Renewing the certificates (on machines running docker)
 
 First stop nginx. If it is running from Docker, stop it with
 ``docker stop NAME`` where ``NAME`` is the name of the container,
