@@ -23,8 +23,13 @@ First stop nginx. If it is running from Docker, stop it with
 certainly something like ``****_nginx_1``, you can get all container
 names with ``docker ps``.
 
-Then get new certificates from Letsencrypt with ``certbot renew``, which
-requires [``certbot`` installed](https://certbot.eff.org/lets-encrypt/ubuntuxenial-nginx).
+Then get new certificates from Letsencrypt:
+
+```
+certbot renew
+```
+
+This requires [``certbot`` installed](https://certbot.eff.org/lets-encrypt/ubuntuxenial-nginx).
 
 It will tell you that the new certificates have been downloaded in
 ``/etc/letsencrypt/...``. If your nginx configuration (see nginx.conf) expects
