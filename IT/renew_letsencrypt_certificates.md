@@ -16,6 +16,12 @@ sudo apt-get install -y python-certbot-nginx
 
 To create a certificate on a new Ubuntu machine see [this link](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04).
 
+In short:
+
+```
+sudo certbot --nginx
+```
+
 ### Renewing the certificates (on machines running docker)
 
 First stop nginx. If it is running from Docker, stop it with
