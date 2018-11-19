@@ -1,4 +1,4 @@
-# Solutions for connecting to the UoE shared storage space from Ubuntu
+# Connecting to the UoE shared storage from Ubuntu
 
 ## Mounting
 
