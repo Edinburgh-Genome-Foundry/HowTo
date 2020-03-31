@@ -32,7 +32,7 @@ Personalize the ``docs`` folder:
 To build the docs, first install the dependencies:
 
 ```
-sudo pip install sphinx sphinx_rtd_theme numpydoc sphinxcontrib-mermaid
+sudo pip install sphinx sphinx_rtd_theme sphinx-press-theme numpydoc sphinxcontrib-mermaid recommonmark
 ```
 
 Then each time you want to re-generate the docs and display them in a Firefox,
@@ -63,7 +63,10 @@ Go to the ``html`` folder, remove all the files in it, and pull your github proj
 git clone git@github.com:myusername/mylibrary .
 ```
 
-Mind the ``.`` at the end. Now run the following commands, still in the ``html`` folder:
+Mind the ``.`` at the end.
+
+If your repo already has a ``gh-pages`` branch, then run ``git checkout gh-pages``. Otherwise run the following commands, still in the ``html`` folder:
+
 
 ```
 git branch gh-pages
