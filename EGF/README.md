@@ -12,7 +12,7 @@ EGF packages were developed on Python v3.6 in Ubuntu (18.04), and in most cases 
 
 ### Option 1: Anaconda
 
-It's recommended to use a separate Python installation with its own environment, and not the operating system's Python. Install the [Anaconda](www.anaconda.com) package manager and create an environment:
+It's recommended to use a separate Python installation with its own environment, and not the operating system's Python. Install the [Anaconda](https://www.anaconda.com) package manager and create an environment:
 ```
 conda create --name egf python=3.6
 ```
@@ -35,7 +35,7 @@ Some packages or their dependencies may not work properly on other operating sys
 
 ## Use
 
-A web interface for many packages is provided at the [EGF's Collection of Useful Biological Apps (CUBA)](cuba.genomefoundry.org/).
+A web interface for many packages is provided at the [EGF's Collection of Useful Biological Apps (CUBA)](https://cuba.genomefoundry.org/).
 
 More customized use requires knowledge of Python, and, for certain packages, other programming and markup languages: HTML, CSS, JavaScript, SQL.
 
