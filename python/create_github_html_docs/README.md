@@ -1,9 +1,77 @@
-# Create HTML docs hosted on Github for your Python project
+# Create HTML docs hosted on GitHub for your Python package
+
+## Using Sphinx to GitHub Pages V3 GitHub Action
+
+In this approach, we generate the documentation from docstrings and rst template ("instruction") files. The documentation that is displayed on github.io is automatically generated upon creating a package release. See workflow steps below.
+
+**Write your docstrings in a suitable format**
+
+For example, use the `numpydoc` format.
+
+
+**Install Sphinx and required themes**
+```
+pip install -U sphinx
+pip install sphinx_rtd_theme
+pip install sphinx-press-theme
+```
+
+**Set up the documentation sources**
+```
+cd /path/to/pkg/
+mkdir docs
+cd docs
+sphinx-quickstart
+```
+
+**Edit the conf.py and the index.rst file**
+
+Set `project`, `copyright`, `author`, and `extensions`, `html_theme` variables.
+Set `napoleon_numpy_docstring = True` if using numpydoc style.
+Create a `ref.rst` file with instructions to auto-generate the API reference from the docstrings.
+See an example in [Minotaor's](https://github.com/Edinburgh-Genome-Foundry/Minotaor) `docs` directory.
+In this package's index.rst, we include a link to the main readme (and the API reference), instead of duplicating the documentation.
+
+
+**Build the documentation**
+
+Issue this command from the `docs` directory:
+```
+make html
+```
+Check that everything looks nice.
+
+
+**Set up the Github Actions workflow**
+
+Use the "[Sphinx to GitHub Pages V3](https://github.com/marketplace/actions/sphinx-to-github-pages)" GitHub Action.
+See an example in [Minotaor's](https://github.com/Edinburgh-Genome-Foundry/Minotaor) `/.github/workflows/document.yml` file.
+
+**Push to GitHub & manually trigger the workflow**
+
+Check that the documentation looks correct before creating a release.
+
+
+---
+
+#### References
+
+Sphinx documentation: https://www.sphinx-doc.org/en/master/usage/installation.html
+
+Sphinx tutorial: https://sphinx-rtd-tutorial.readthedocs.io/
+
+Numpydoc format: https://numpydoc.readthedocs.io/en/latest/format.html
+
+Example numpydoc: https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html
+
+
+---
+
+## Previous approach (pre-2025): Generating the HTML docs
 
 This explains how to use sphinx to autodocument a Python library, and how to
-host it on Github. This is WAY over-complicated, but hey, it may get simpler one day.
-
-## Generating the HTML docs
+host it on Github. This is WAY over-complicated, but hey, it may get simpler one day
+*[note from future: it did get simpler].*
 
 Your project should have the following structure, where ``docs`` is the folder
 attached in this repo:
