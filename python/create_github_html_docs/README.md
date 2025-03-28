@@ -1,6 +1,6 @@
 # Create HTML docs hosted on GitHub for your Python package
 
-## Using Sphinx to GitHub Pages V3 GitHub Action
+## Using Sphinx to create documentation with GitHub Pages V3 GitHub Action
 
 In this approach, we generate the documentation from docstrings and rst template ("instruction") files. The documentation that is displayed on github.io is automatically generated upon creating a package release. See workflow steps below.
 
@@ -30,7 +30,7 @@ Set `project`, `copyright`, `author`, and `extensions`, `html_theme` variables.
 Set `napoleon_numpy_docstring = True` if using numpydoc style.
 Create a `ref.rst` file with instructions to auto-generate the API reference from the docstrings.
 See an example in [Minotaor's](https://github.com/Edinburgh-Genome-Foundry/Minotaor) `docs` directory.
-In this package's index.rst, we include a link to the main readme (and the API reference), instead of duplicating the documentation.
+In this package's `index.rst` file, we include a link to the main readme (and the API reference), instead of duplicating the documentation.
 
 
 **Build the documentation**
