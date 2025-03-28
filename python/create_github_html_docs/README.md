@@ -47,6 +47,11 @@ Check that everything looks nice.
 Use the "[Sphinx to GitHub Pages V3](https://github.com/marketplace/actions/sphinx-to-github-pages)" GitHub Action.
 See an example in [Minotaor's](https://github.com/Edinburgh-Genome-Foundry/Minotaor) `/.github/workflows/document.yml` file.
 
+**Adjust the GitHub repo settings**
+
+Go to Settings / Pages --> Build and deployment; and set 'Source' to 'GitHub Actions' in the dropdown menu.
+
+
 **Push to GitHub & manually trigger the workflow**
 
 Check that the documentation looks correct before creating a release.
