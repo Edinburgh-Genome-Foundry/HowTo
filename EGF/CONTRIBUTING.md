@@ -42,7 +42,7 @@ See details at [Create HTML docs](https://github.com/Edinburgh-Genome-Foundry/Ho
 
 Please follow the below guidelines:
 
-* For new features, first file an issue for discussion.
+* For new features, please first [send and email](https://github.com/Edinburgh-Genome-Foundry) or file an issue for discussion.
 * Fork the repo.
 * Ensure that the new code conforms to the development guidelines, including documentation and passing tests.
 * Make sure that you have the legal right to contribute the code under the project's licence.
